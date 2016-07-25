@@ -20,6 +20,8 @@
 		0F4994ED1D45E2A900C57601 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994EC1D45E2A900C57601 /* Message.storyboard */; };
 		0F4994EF1D45E44200C57601 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994EE1D45E44200C57601 /* Me.storyboard */; };
 		0F4994F11D45E7BD00C57601 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994F01D45E7BD00C57601 /* Splash.storyboard */; };
+		0F4994F41D45F21C00C57601 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4994F31D45F21C00C57601 /* SplashViewController.m */; };
+		0F4994F81D45F9EE00C57601 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4994F71D45F9EE00C57601 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		0F4994EC1D45E2A900C57601 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		0F4994EE1D45E44200C57601 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		0F4994F01D45E7BD00C57601 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		0F4994F21D45F21C00C57601 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		0F4994F31D45F21C00C57601 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		0F4994F61D45F9EE00C57601 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0F4994F71D45F9EE00C57601 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +78,7 @@
 		0F4994CA1D45D66600C57601 /* Fanner */ = {
 			isa = PBXGroup;
 			children = (
-				0F4994F01D45E7BD00C57601 /* Splash.storyboard */,
+				0F4994F51D45F22700C57601 /* Splash */,
 				0F4994E91D45E1BA00C57601 /* Main */,
 				0F4994E41D45D6E800C57601 /* Login */,
 				0F4994CE1D45D66600C57601 /* AppDelegate.h */,
@@ -99,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				0F4994E21D45D6A500C57601 /* Login.storyboard */,
+				0F4994F61D45F9EE00C57601 /* LoginViewController.h */,
+				0F4994F71D45F9EE00C57601 /* LoginViewController.m */,
 				0F4994E51D45D83E00C57601 /* Accounts.storyboard */,
 			);
 			name = Login;
@@ -114,6 +122,16 @@
 				0F4994EE1D45E44200C57601 /* Me.storyboard */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		0F4994F51D45F22700C57601 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0F4994F01D45E7BD00C57601 /* Splash.storyboard */,
+				0F4994F21D45F21C00C57601 /* SplashViewController.h */,
+				0F4994F31D45F21C00C57601 /* SplashViewController.m */,
+			);
+			name = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +214,8 @@
 				0F4994D31D45D66600C57601 /* ViewController.m in Sources */,
 				0F4994D01D45D66600C57601 /* AppDelegate.m in Sources */,
 				0F4994CD1D45D66600C57601 /* main.m in Sources */,
+				0F4994F41D45F21C00C57601 /* SplashViewController.m in Sources */,
+				0F4994F81D45F9EE00C57601 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
