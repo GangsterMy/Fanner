@@ -7,4 +7,7 @@ target 'Fanner' do
 
   # Pods for Fanner
 
+pod 'TDOAuth'
+pod 'AFNetworking', '~> 3.0'
+
 end
