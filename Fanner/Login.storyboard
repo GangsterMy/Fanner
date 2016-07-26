@@ -51,10 +51,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="5Mw-T0-hOy" kind="presentation" identifier="ShowAccountsSegue" id="ULs-a6-cqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8V-TZ-D6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1121" y="336"/>
+        </scene>
+        <!--Accounts-->
+        <scene sceneID="lrg-mh-K9g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Accounts" id="5Mw-T0-hOy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGT-Zx-RIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1579.5" y="50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G6V-Kn-M8x">

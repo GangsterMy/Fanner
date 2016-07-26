@@ -23,6 +23,13 @@
 		0F4994F41D45F21C00C57601 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4994F31D45F21C00C57601 /* SplashViewController.m */; };
 		0F4994F81D45F9EE00C57601 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4994F71D45F9EE00C57601 /* LoginViewController.m */; };
 		0F4994FA1D46037000C57601 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994F91D46037000C57601 /* Podfile */; };
+		0F973D771D473D1500DFD3CF /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D761D473D1500DFD3CF /* UserTableViewCell.m */; };
+		0F973D7A1D4743B400DFD3CF /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D791D4743B400DFD3CF /* AccountsTableViewController.m */; };
+		0F973D7E1D47456A00DFD3CF /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D7D1D47456A00DFD3CF /* CoreDataStack.m */; };
+		0F973D811D4748EB00DFD3CF /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D7F1D4748EB00DFD3CF /* Model.xcdatamodeld */; };
+		0F973D861D47558400DFD3CF /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D831D47558400DFD3CF /* User+CoreDataProperties.m */; };
+		0F973D871D47558400DFD3CF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D851D47558400DFD3CF /* User.m */; };
+		0F973D8B1D4755FE00DFD3CF /* CoreDataStack+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D8A1D4755FE00DFD3CF /* CoreDataStack+User.m */; };
 		4783E71C5BC597D33FC8F7CE /* libPods-Fanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31D4C7B8BA101CB8EC402C /* libPods-Fanner.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +56,19 @@
 		0F4994F61D45F9EE00C57601 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0F4994F71D45F9EE00C57601 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0F4994F91D46037000C57601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		0F973D751D473D1500DFD3CF /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
+		0F973D761D473D1500DFD3CF /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
+		0F973D781D4743B400DFD3CF /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
+		0F973D791D4743B400DFD3CF /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
+		0F973D7C1D47456A00DFD3CF /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		0F973D7D1D47456A00DFD3CF /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		0F973D801D4748EB00DFD3CF /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		0F973D821D47558400DFD3CF /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0F973D831D47558400DFD3CF /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0F973D841D47558400DFD3CF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0F973D851D47558400DFD3CF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0F973D891D4755FE00DFD3CF /* CoreDataStack+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+User.h"; sourceTree = "<group>"; };
+		0F973D8A1D4755FE00DFD3CF /* CoreDataStack+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataStack+User.m"; sourceTree = "<group>"; };
 		1C4DE01E8B1DD5686994375B /* Pods-Fanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fanner/Pods-Fanner.debug.xcconfig"; sourceTree = "<group>"; };
 		DCC1A1E35D864726B94CD2CD /* Pods-Fanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fanner/Pods-Fanner.release.xcconfig"; sourceTree = "<group>"; };
 		EF31D4C7B8BA101CB8EC402C /* libPods-Fanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +108,7 @@
 		0F4994CA1D45D66600C57601 /* Fanner */ = {
 			isa = PBXGroup;
 			children = (
+				0F973D7B1D47452200DFD3CF /* CoreData */,
 				0F4994F51D45F22700C57601 /* Splash */,
 				0F4994E91D45E1BA00C57601 /* Main */,
 				0F4994E41D45D6E800C57601 /* Login */,
@@ -118,6 +139,10 @@
 				0F4994F61D45F9EE00C57601 /* LoginViewController.h */,
 				0F4994F71D45F9EE00C57601 /* LoginViewController.m */,
 				0F4994E51D45D83E00C57601 /* Accounts.storyboard */,
+				0F973D781D4743B400DFD3CF /* AccountsTableViewController.h */,
+				0F973D791D4743B400DFD3CF /* AccountsTableViewController.m */,
+				0F973D751D473D1500DFD3CF /* UserTableViewCell.h */,
+				0F973D761D473D1500DFD3CF /* UserTableViewCell.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -142,6 +167,30 @@
 				0F4994F31D45F21C00C57601 /* SplashViewController.m */,
 			);
 			name = Splash;
+			sourceTree = "<group>";
+		};
+		0F973D7B1D47452200DFD3CF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0F973D881D47559A00DFD3CF /* Model */,
+				0F973D7C1D47456A00DFD3CF /* CoreDataStack.h */,
+				0F973D7D1D47456A00DFD3CF /* CoreDataStack.m */,
+				0F973D891D4755FE00DFD3CF /* CoreDataStack+User.h */,
+				0F973D8A1D4755FE00DFD3CF /* CoreDataStack+User.m */,
+				0F973D7F1D4748EB00DFD3CF /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		0F973D881D47559A00DFD3CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F973D821D47558400DFD3CF /* User+CoreDataProperties.h */,
+				0F973D831D47558400DFD3CF /* User+CoreDataProperties.m */,
+				0F973D841D47558400DFD3CF /* User.h */,
+				0F973D851D47558400DFD3CF /* User.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		1F1E86675A3CD403925C55D9 /* Pods */ = {
@@ -290,10 +339,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F973D861D47558400DFD3CF /* User+CoreDataProperties.m in Sources */,
 				0F4994D31D45D66600C57601 /* ViewController.m in Sources */,
+				0F973D8B1D4755FE00DFD3CF /* CoreDataStack+User.m in Sources */,
 				0F4994D01D45D66600C57601 /* AppDelegate.m in Sources */,
+				0F973D771D473D1500DFD3CF /* UserTableViewCell.m in Sources */,
+				0F973D7E1D47456A00DFD3CF /* CoreDataStack.m in Sources */,
 				0F4994CD1D45D66600C57601 /* main.m in Sources */,
+				0F973D871D47558400DFD3CF /* User.m in Sources */,
+				0F973D811D4748EB00DFD3CF /* Model.xcdatamodeld in Sources */,
 				0F4994F41D45F21C00C57601 /* SplashViewController.m in Sources */,
+				0F973D7A1D4743B400DFD3CF /* AccountsTableViewController.m in Sources */,
 				0F4994F81D45F9EE00C57601 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +506,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0F973D7F1D4748EB00DFD3CF /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0F973D801D4748EB00DFD3CF /* Model.xcdatamodel */,
+			);
+			currentVersion = 0F973D801D4748EB00DFD3CF /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0F4994C01D45D66600C57601 /* Project object */;
 }

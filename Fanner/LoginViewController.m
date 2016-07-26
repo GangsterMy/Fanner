@@ -15,6 +15,14 @@
 @implementation LoginViewController
 - (IBAction)login:(UIBarButtonItem *)sender {
     
+    // login success
+    
+    [self performSegueWithIdentifier:@"ShowAccountsSegue" sender:nil];
+    
+    // login fail
+    
+    
+    
 }
 - (IBAction)cancel:(UIBarButtonItem *)sender {
     
