@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "CoreDataTVC.h"
 
-@interface AccountsTableViewController : UITableViewController
+@interface AccountsTableViewController : CoreDataTVC
 
 @end

@@ -30,6 +30,9 @@
 		0F973D861D47558400DFD3CF /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D831D47558400DFD3CF /* User+CoreDataProperties.m */; };
 		0F973D871D47558400DFD3CF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D851D47558400DFD3CF /* User.m */; };
 		0F973D8B1D4755FE00DFD3CF /* CoreDataStack+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D8A1D4755FE00DFD3CF /* CoreDataStack+User.m */; };
+		0F973D8F1D487ACB00DFD3CF /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D8E1D487ACB00DFD3CF /* Service.m */; };
+		0F973D921D487DF600DFD3CF /* APIConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D911D487DF600DFD3CF /* APIConstant.m */; };
+		0F973D991D48A45700DFD3CF /* CoreDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D981D48A45700DFD3CF /* CoreDataTVC.m */; };
 		4783E71C5BC597D33FC8F7CE /* libPods-Fanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31D4C7B8BA101CB8EC402C /* libPods-Fanner.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,12 @@
 		0F973D851D47558400DFD3CF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		0F973D891D4755FE00DFD3CF /* CoreDataStack+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+User.h"; sourceTree = "<group>"; };
 		0F973D8A1D4755FE00DFD3CF /* CoreDataStack+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataStack+User.m"; sourceTree = "<group>"; };
+		0F973D8D1D487ACB00DFD3CF /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		0F973D8E1D487ACB00DFD3CF /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		0F973D901D487DF600DFD3CF /* APIConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstant.h; sourceTree = "<group>"; };
+		0F973D911D487DF600DFD3CF /* APIConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConstant.m; sourceTree = "<group>"; };
+		0F973D971D48A45700DFD3CF /* CoreDataTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTVC.h; sourceTree = "<group>"; };
+		0F973D981D48A45700DFD3CF /* CoreDataTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTVC.m; sourceTree = "<group>"; };
 		1C4DE01E8B1DD5686994375B /* Pods-Fanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fanner/Pods-Fanner.debug.xcconfig"; sourceTree = "<group>"; };
 		DCC1A1E35D864726B94CD2CD /* Pods-Fanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fanner/Pods-Fanner.release.xcconfig"; sourceTree = "<group>"; };
 		EF31D4C7B8BA101CB8EC402C /* libPods-Fanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +117,7 @@
 		0F4994CA1D45D66600C57601 /* Fanner */ = {
 			isa = PBXGroup;
 			children = (
+				0F973D8C1D487AB000DFD3CF /* Service */,
 				0F973D7B1D47452200DFD3CF /* CoreData */,
 				0F4994F51D45F22700C57601 /* Splash */,
 				0F4994E91D45E1BA00C57601 /* Main */,
@@ -172,6 +182,7 @@
 		0F973D7B1D47452200DFD3CF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				0F973D961D489EC500DFD3CF /* Generic TVC */,
 				0F973D881D47559A00DFD3CF /* Model */,
 				0F973D7C1D47456A00DFD3CF /* CoreDataStack.h */,
 				0F973D7D1D47456A00DFD3CF /* CoreDataStack.m */,
@@ -191,6 +202,26 @@
 				0F973D851D47558400DFD3CF /* User.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		0F973D8C1D487AB000DFD3CF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0F973D8D1D487ACB00DFD3CF /* Service.h */,
+				0F973D8E1D487ACB00DFD3CF /* Service.m */,
+				0F973D901D487DF600DFD3CF /* APIConstant.h */,
+				0F973D911D487DF600DFD3CF /* APIConstant.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		0F973D961D489EC500DFD3CF /* Generic TVC */ = {
+			isa = PBXGroup;
+			children = (
+				0F973D971D48A45700DFD3CF /* CoreDataTVC.h */,
+				0F973D981D48A45700DFD3CF /* CoreDataTVC.m */,
+			);
+			name = "Generic TVC";
 			sourceTree = "<group>";
 		};
 		1F1E86675A3CD403925C55D9 /* Pods */ = {
@@ -340,8 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F973D861D47558400DFD3CF /* User+CoreDataProperties.m in Sources */,
+				0F973D991D48A45700DFD3CF /* CoreDataTVC.m in Sources */,
 				0F4994D31D45D66600C57601 /* ViewController.m in Sources */,
+				0F973D921D487DF600DFD3CF /* APIConstant.m in Sources */,
 				0F973D8B1D4755FE00DFD3CF /* CoreDataStack+User.m in Sources */,
+				0F973D8F1D487ACB00DFD3CF /* Service.m in Sources */,
 				0F4994D01D45D66600C57601 /* AppDelegate.m in Sources */,
 				0F973D771D473D1500DFD3CF /* UserTableViewCell.m in Sources */,
 				0F973D7E1D47456A00DFD3CF /* CoreDataStack.m in Sources */,

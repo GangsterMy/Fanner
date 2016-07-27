@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "Service.h"
 
 @interface LoginViewController ()
 
@@ -17,13 +18,19 @@
     
     // login success
     
-    [self performSegueWithIdentifier:@"ShowAccountsSegue" sender:nil];
-    
+    [[Service sharedInstance] authoriseWithUserName:@"impzone@163.com"
+                                           password:@"Gangster2918"
+                                            success:^(NSString *token, NSString *tokenSecret) {
+        [[Service sharedInstance] requestVerifyCredential:nil accessToken:token tokenSecret:tokenSecret requestMethod:@"GET" success:^(NSDictionary *result) {
+            [self performSegueWithIdentifier:@"ShowAccountsSegue" sender:nil];
+        }];
+    }];
     // login fail
     
     
     
 }
+
 - (IBAction)cancel:(UIBarButtonItem *)sender {
     
 }
@@ -39,13 +46,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
