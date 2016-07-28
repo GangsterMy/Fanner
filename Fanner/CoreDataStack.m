@@ -35,7 +35,7 @@
 //    _model = [[NSManagedObjectModel alloc] initWithContentsOfURL:url];
     
     //method 2
-    [NSManagedObjectModel mergedModelFromBundles:nil];
+    _model = [NSManagedObjectModel mergedModelFromBundles:nil];
     return _model;
 }
 
@@ -74,6 +74,7 @@
     }
     
     _context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    _context.persistentStoreCoordinator = self.coordinator;
     return _context;
 }
 

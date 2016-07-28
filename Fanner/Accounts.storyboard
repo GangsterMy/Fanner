@@ -9,7 +9,7 @@
         <!--账号-->
         <scene sceneID="2b0-wF-vWU">
             <objects>
-                <tableViewController id="BGl-xG-ooL" sceneMemberID="viewController">
+                <tableViewController id="BGl-xG-ooL" customClass="AccountsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" id="sck-MD-oQL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,13 +34,13 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdI-g8-JeM">
-                                            <rect key="frame" x="88" y="8" width="504" height="29"/>
+                                            <rect key="frame" x="88" y="21" width="504" height="29"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtw-im-6ft">
-                                            <rect key="frame" x="88" y="70" width="504" height="24"/>
+                                            <rect key="frame" x="88" y="57" width="504" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -50,14 +50,14 @@
                                         <constraint firstItem="Qec-zz-eGo" firstAttribute="trailing" secondItem="JYv-DI-Sx0" secondAttribute="trailing" id="2zo-wb-1dX"/>
                                         <constraint firstItem="Vtw-im-6ft" firstAttribute="leading" secondItem="EdI-g8-JeM" secondAttribute="leading" id="45R-P5-qdG"/>
                                         <constraint firstItem="JYv-DI-Sx0" firstAttribute="leading" secondItem="37U-wT-fyM" secondAttribute="leadingMargin" constant="10" id="HJa-gg-qTq"/>
-                                        <constraint firstItem="EdI-g8-JeM" firstAttribute="top" secondItem="37U-wT-fyM" secondAttribute="topMargin" id="Jhw-52-Af4"/>
                                         <constraint firstItem="Qec-zz-eGo" firstAttribute="top" secondItem="JYv-DI-Sx0" secondAttribute="top" id="LX4-Gc-aoZ"/>
                                         <constraint firstItem="EdI-g8-JeM" firstAttribute="leading" secondItem="Qec-zz-eGo" secondAttribute="trailing" constant="10" id="RBH-zk-N4j"/>
                                         <constraint firstItem="JYv-DI-Sx0" firstAttribute="centerY" secondItem="37U-wT-fyM" secondAttribute="centerY" id="TYm-tL-wCL"/>
                                         <constraint firstItem="Vtw-im-6ft" firstAttribute="trailing" secondItem="EdI-g8-JeM" secondAttribute="trailing" id="Vtt-gR-l65"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Vtw-im-6ft" secondAttribute="bottom" id="cs4-5i-W93"/>
+                                        <constraint firstItem="Vtw-im-6ft" firstAttribute="bottom" secondItem="Qec-zz-eGo" secondAttribute="bottom" id="WeL-EG-PnS"/>
                                         <constraint firstItem="Qec-zz-eGo" firstAttribute="leading" secondItem="JYv-DI-Sx0" secondAttribute="leading" id="dWN-1f-i1a"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="EdI-g8-JeM" secondAttribute="trailing" id="scU-js-fxL"/>
+                                        <constraint firstItem="EdI-g8-JeM" firstAttribute="top" secondItem="Qec-zz-eGo" secondAttribute="top" id="v1B-9l-eYv"/>
                                         <constraint firstItem="Qec-zz-eGo" firstAttribute="bottom" secondItem="JYv-DI-Sx0" secondAttribute="bottom" id="yG2-xT-Z9P"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -65,6 +65,7 @@
                                     <outlet property="iconImageView" destination="JYv-DI-Sx0" id="gUa-Na-a50"/>
                                     <outlet property="idLabel" destination="Vtw-im-6ft" id="ZgM-Ee-Fa4"/>
                                     <outlet property="nameLabel" destination="EdI-g8-JeM" id="Kmd-t3-ixB"/>
+                                    <segue destination="RHH-i3-kmc" kind="presentation" id="nzQ-j0-a0X"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,6 +82,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrg-Wf-oPO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="780" y="304"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Kiy-jy-f0D">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="RHH-i3-kmc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLE-nH-v8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213.5" y="304"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cgG-sM-yKI">

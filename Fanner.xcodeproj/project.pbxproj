@@ -15,7 +15,6 @@
 		0F4994DB1D45D66600C57601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994D91D45D66600C57601 /* LaunchScreen.storyboard */; };
 		0F4994E31D45D6A500C57601 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994E21D45D6A500C57601 /* Login.storyboard */; };
 		0F4994E61D45D83E00C57601 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994E51D45D83E00C57601 /* Accounts.storyboard */; };
-		0F4994E81D45D91A00C57601 /* TimeLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994E71D45D91A00C57601 /* TimeLine.storyboard */; };
 		0F4994EB1D45E1F200C57601 /* Mention.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994EA1D45E1F200C57601 /* Mention.storyboard */; };
 		0F4994ED1D45E2A900C57601 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994EC1D45E2A900C57601 /* Message.storyboard */; };
 		0F4994EF1D45E44200C57601 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4994EE1D45E44200C57601 /* Me.storyboard */; };
@@ -33,6 +32,11 @@
 		0F973D8F1D487ACB00DFD3CF /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D8E1D487ACB00DFD3CF /* Service.m */; };
 		0F973D921D487DF600DFD3CF /* APIConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D911D487DF600DFD3CF /* APIConstant.m */; };
 		0F973D991D48A45700DFD3CF /* CoreDataTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F973D981D48A45700DFD3CF /* CoreDataTVC.m */; };
+		0F973D9E1D49A10E00DFD3CF /* TimeLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F973D9D1D49A10E00DFD3CF /* TimeLine.storyboard */; };
+		0FB136E41D49ED7A00B0312B /* TimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB136E21D49ED7A00B0312B /* TimeLineTableViewCell.m */; };
+		0FB136E51D49ED7A00B0312B /* TimeLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FB136E31D49ED7A00B0312B /* TimeLineTableViewCell.xib */; };
+		0FB136EA1D49F78100B0312B /* Status+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB136E71D49F78100B0312B /* Status+CoreDataProperties.m */; };
+		0FB136EB1D49F78100B0312B /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB136E91D49F78100B0312B /* Status.m */; };
 		4783E71C5BC597D33FC8F7CE /* libPods-Fanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31D4C7B8BA101CB8EC402C /* libPods-Fanner.a */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +53,6 @@
 		0F4994DC1D45D66600C57601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F4994E21D45D6A500C57601 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0F4994E51D45D83E00C57601 /* Accounts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
-		0F4994E71D45D91A00C57601 /* TimeLine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeLine.storyboard; sourceTree = "<group>"; };
 		0F4994EA1D45E1F200C57601 /* Mention.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mention.storyboard; sourceTree = "<group>"; };
 		0F4994EC1D45E2A900C57601 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		0F4994EE1D45E44200C57601 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
@@ -58,7 +61,7 @@
 		0F4994F31D45F21C00C57601 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
 		0F4994F61D45F9EE00C57601 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0F4994F71D45F9EE00C57601 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		0F4994F91D46037000C57601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		0F4994F91D46037000C57601 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0F973D751D473D1500DFD3CF /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewCell.h; sourceTree = "<group>"; };
 		0F973D761D473D1500DFD3CF /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewCell.m; sourceTree = "<group>"; };
 		0F973D781D4743B400DFD3CF /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
@@ -78,6 +81,14 @@
 		0F973D911D487DF600DFD3CF /* APIConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConstant.m; sourceTree = "<group>"; };
 		0F973D971D48A45700DFD3CF /* CoreDataTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTVC.h; sourceTree = "<group>"; };
 		0F973D981D48A45700DFD3CF /* CoreDataTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTVC.m; sourceTree = "<group>"; };
+		0F973D9D1D49A10E00DFD3CF /* TimeLine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeLine.storyboard; sourceTree = "<group>"; };
+		0FB136E11D49ED7A00B0312B /* TimeLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineTableViewCell.h; sourceTree = "<group>"; };
+		0FB136E21D49ED7A00B0312B /* TimeLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineTableViewCell.m; sourceTree = "<group>"; };
+		0FB136E31D49ED7A00B0312B /* TimeLineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLineTableViewCell.xib; sourceTree = "<group>"; };
+		0FB136E61D49F78100B0312B /* Status+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Status+CoreDataProperties.h"; sourceTree = "<group>"; };
+		0FB136E71D49F78100B0312B /* Status+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Status+CoreDataProperties.m"; sourceTree = "<group>"; };
+		0FB136E81D49F78100B0312B /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		0FB136E91D49F78100B0312B /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		1C4DE01E8B1DD5686994375B /* Pods-Fanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fanner/Pods-Fanner.debug.xcconfig"; sourceTree = "<group>"; };
 		DCC1A1E35D864726B94CD2CD /* Pods-Fanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fanner/Pods-Fanner.release.xcconfig"; sourceTree = "<group>"; };
 		EF31D4C7B8BA101CB8EC402C /* libPods-Fanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				0F4994D41D45D66600C57601 /* Main.storyboard */,
-				0F4994E71D45D91A00C57601 /* TimeLine.storyboard */,
+				0FB136E01D49ED2E00B0312B /* TimeLine */,
 				0F4994EA1D45E1F200C57601 /* Mention.storyboard */,
 				0F4994EC1D45E2A900C57601 /* Message.storyboard */,
 				0F4994EE1D45E44200C57601 /* Me.storyboard */,
@@ -196,6 +207,10 @@
 		0F973D881D47559A00DFD3CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0FB136E61D49F78100B0312B /* Status+CoreDataProperties.h */,
+				0FB136E71D49F78100B0312B /* Status+CoreDataProperties.m */,
+				0FB136E81D49F78100B0312B /* Status.h */,
+				0FB136E91D49F78100B0312B /* Status.m */,
 				0F973D821D47558400DFD3CF /* User+CoreDataProperties.h */,
 				0F973D831D47558400DFD3CF /* User+CoreDataProperties.m */,
 				0F973D841D47558400DFD3CF /* User.h */,
@@ -222,6 +237,17 @@
 				0F973D981D48A45700DFD3CF /* CoreDataTVC.m */,
 			);
 			name = "Generic TVC";
+			sourceTree = "<group>";
+		};
+		0FB136E01D49ED2E00B0312B /* TimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				0F973D9D1D49A10E00DFD3CF /* TimeLine.storyboard */,
+				0FB136E11D49ED7A00B0312B /* TimeLineTableViewCell.h */,
+				0FB136E21D49ED7A00B0312B /* TimeLineTableViewCell.m */,
+				0FB136E31D49ED7A00B0312B /* TimeLineTableViewCell.xib */,
+			);
+			name = TimeLine;
 			sourceTree = "<group>";
 		};
 		1F1E86675A3CD403925C55D9 /* Pods */ = {
@@ -301,17 +327,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB136E51D49ED7A00B0312B /* TimeLineTableViewCell.xib in Resources */,
 				0F4994E31D45D6A500C57601 /* Login.storyboard in Resources */,
 				0F4994E61D45D83E00C57601 /* Accounts.storyboard in Resources */,
 				0F4994DB1D45D66600C57601 /* LaunchScreen.storyboard in Resources */,
 				0F4994F11D45E7BD00C57601 /* Splash.storyboard in Resources */,
 				0F4994EB1D45E1F200C57601 /* Mention.storyboard in Resources */,
-				0F4994E81D45D91A00C57601 /* TimeLine.storyboard in Resources */,
 				0F4994EF1D45E44200C57601 /* Me.storyboard in Resources */,
 				0F4994D81D45D66600C57601 /* Assets.xcassets in Resources */,
 				0F4994ED1D45E2A900C57601 /* Message.storyboard in Resources */,
 				0F4994D61D45D66600C57601 /* Main.storyboard in Resources */,
 				0F4994FA1D46037000C57601 /* Podfile in Resources */,
+				0F973D9E1D49A10E00DFD3CF /* TimeLine.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,11 +404,14 @@
 				0F973D8B1D4755FE00DFD3CF /* CoreDataStack+User.m in Sources */,
 				0F973D8F1D487ACB00DFD3CF /* Service.m in Sources */,
 				0F4994D01D45D66600C57601 /* AppDelegate.m in Sources */,
+				0FB136EB1D49F78100B0312B /* Status.m in Sources */,
 				0F973D771D473D1500DFD3CF /* UserTableViewCell.m in Sources */,
 				0F973D7E1D47456A00DFD3CF /* CoreDataStack.m in Sources */,
 				0F4994CD1D45D66600C57601 /* main.m in Sources */,
 				0F973D871D47558400DFD3CF /* User.m in Sources */,
+				0FB136EA1D49F78100B0312B /* Status+CoreDataProperties.m in Sources */,
 				0F973D811D4748EB00DFD3CF /* Model.xcdatamodeld in Sources */,
+				0FB136E41D49ED7A00B0312B /* TimeLineTableViewCell.m in Sources */,
 				0F4994F41D45F21C00C57601 /* SplashViewController.m in Sources */,
 				0F973D7A1D4743B400DFD3CF /* AccountsTableViewController.m in Sources */,
 				0F4994F81D45F9EE00C57601 /* LoginViewController.m in Sources */,

@@ -15,4 +15,5 @@ extern NSString *const FANFOU_BASE_HOST;
 extern NSString *const FANFOU_API_HOST;
 //api.fanfou.com
 extern NSString *const API_VERIFY_CREDENTIALS;
+extern NSString *const API_HOME_TIMELINE;
 

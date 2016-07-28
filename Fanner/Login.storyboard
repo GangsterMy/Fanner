@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -18,25 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ged-bF-cU1">
-                                <rect key="frame" x="0.0" y="84" width="600" height="30"/>
+                                <rect key="frame" x="20" y="84" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEu-WS-3og">
-                                <rect key="frame" x="0.0" y="134" width="600" height="30"/>
+                                <rect key="frame" x="20" y="134" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zEu-WS-3og" firstAttribute="leading" secondItem="Ged-bF-cU1" secondAttribute="leading" id="JAI-kJ-Y31"/>
-                            <constraint firstAttribute="trailing" secondItem="Ged-bF-cU1" secondAttribute="trailing" id="PC7-5O-33Q"/>
-                            <constraint firstItem="zEu-WS-3og" firstAttribute="trailing" secondItem="Ged-bF-cU1" secondAttribute="trailing" id="VUq-oN-j4N"/>
-                            <constraint firstItem="Ged-bF-cU1" firstAttribute="top" secondItem="YDT-mN-AlM" secondAttribute="bottom" constant="20" id="XUT-d2-0oe"/>
-                            <constraint firstItem="Ged-bF-cU1" firstAttribute="top" secondItem="YDT-mN-AlM" secondAttribute="bottom" constant="20" id="ZgT-Nn-6B3"/>
-                            <constraint firstItem="zEu-WS-3og" firstAttribute="top" secondItem="Ged-bF-cU1" secondAttribute="bottom" constant="20" id="f0J-ro-haY"/>
-                            <constraint firstItem="Ged-bF-cU1" firstAttribute="leading" secondItem="0Ri-RG-IPU" secondAttribute="leading" id="nLl-Od-txh"/>
+                            <constraint firstItem="zEu-WS-3og" firstAttribute="top" secondItem="Ged-bF-cU1" secondAttribute="bottom" constant="20" id="5kf-Mq-eTy"/>
+                            <constraint firstItem="Ged-bF-cU1" firstAttribute="top" secondItem="YDT-mN-AlM" secondAttribute="bottom" constant="20" id="Kz6-lF-Wkv"/>
+                            <constraint firstItem="Ged-bF-cU1" firstAttribute="trailing" secondItem="zEu-WS-3og" secondAttribute="trailing" id="h4A-gr-t2m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ged-bF-cU1" secondAttribute="trailing" id="lBp-Yz-lh9"/>
+                            <constraint firstItem="Ged-bF-cU1" firstAttribute="leading" secondItem="zEu-WS-3og" secondAttribute="leading" id="lne-4B-Iya"/>
+                            <constraint firstItem="Ged-bF-cU1" firstAttribute="leading" secondItem="0Ri-RG-IPU" secondAttribute="leadingMargin" id="mYy-yE-6dc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="X73-yq-VB3">
@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8V-TZ-D6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1121" y="336"/>
+            <point key="canvasLocation" x="963" y="336"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="lrg-mh-K9g">
@@ -65,7 +65,7 @@
                 <viewControllerPlaceholder storyboardName="Accounts" id="5Mw-T0-hOy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGT-Zx-RIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1579.5" y="50"/>
+            <point key="canvasLocation" x="1384.5" y="336"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G6V-Kn-M8x">

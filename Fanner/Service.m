@@ -81,18 +81,81 @@
                  requestMethod:(NSString *)requestMethod
                        success:(void (^)(NSDictionary *result))success {
     
-    NSURLRequest *request = [TDOAuth URLRequestForPath:API_VERIFY_CREDENTIALS parameters:parameters host:FANFOU_API_HOST consumerKey:CONSUMER_KEY consumerSecret:CONSUMER_SECRET accessToken:accessToken tokenSecret:tokenSecret scheme:@"http" requestMethod:requestMethod dataEncoding:TDOAuthContentTypeUrlEncodedForm headerValues:nil signatureMethod:TDOAuthSignatureMethodHmacSha1];
+    NSURLRequest *request = [TDOAuth URLRequestForPath:API_VERIFY_CREDENTIALS
+                                            parameters:parameters
+                                                  host:FANFOU_API_HOST
+                                           consumerKey:CONSUMER_KEY
+                                        consumerSecret:CONSUMER_SECRET
+                                           accessToken:accessToken
+                                           tokenSecret:tokenSecret
+                                                scheme:@"http"
+                                         requestMethod:requestMethod
+                                          dataEncoding:TDOAuthContentTypeUrlEncodedForm
+                                          headerValues:nil
+                                       signatureMethod:TDOAuthSignatureMethodHmacSha1];
     
     NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
         
         [[CoreDataStack sharedCoreDataStack] insertOrUpdateWithUserProfile:result token:accessToken tokenSecret:tokenSecret];
+        
         success(result);
     }];
     
     [task resume];
     
 }
+
+#pragma mark - Base Request
+-(void)requestWithPath:(NSString *)path
+            parameters:(NSDictionary *)parameters
+           accessToken:(NSString *)accessToken
+           tokenSecret:(NSString *)tokenSecret
+         requestMethod:(NSString *)requestMethod
+               success:(void (^)(NSDictionary *result))success
+               failure:(void (^)(NSError *error))failure {
+    
+    NSURLRequest *request = [TDOAuth URLRequestForPath:path
+                                            parameters:parameters
+                                                  host:FANFOU_API_HOST
+                                           consumerKey:CONSUMER_KEY
+                                        consumerSecret:CONSUMER_SECRET
+                                           accessToken:accessToken
+                                           tokenSecret:tokenSecret
+                                                scheme:@"http"
+                                         requestMethod:requestMethod
+                                          dataEncoding:TDOAuthContentTypeUrlEncodedForm
+                                          headerValues:nil
+                                       signatureMethod:TDOAuthSignatureMethodHmacSha1];
+    
+    NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            failure(error);
+        } else {
+            
+            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            
+            success(result);
+        }
+    }];
+    
+    [task resume];
+    
+}
+
+#pragma mark - Status
+-(void)requestStatusWithSuccess:(void (^)(NSDictionary *result))success
+                        failure:(void (^)(NSError *error))failure {
+    
+    User *user = [CoreDataStack sharedCoreDataStack].currentUser;
+    
+    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite"} accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" success:success failure:failure];
+    
+    
+}
+
+
 
 @end

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class User;
 @interface UserTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
-
+-(void)configureWithUser:(User *)user;
 @end

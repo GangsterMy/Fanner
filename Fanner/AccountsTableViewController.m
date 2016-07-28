@@ -8,13 +8,18 @@
 
 #import "AccountsTableViewController.h"
 #import "CoreDataStack+User.h"
+#import "UserTableViewCell.h"
+#import "User.h"
 
 @implementation AccountsTableViewController
 
 -(void)configureFetch {
     
     NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:@"User"];
+    NSArray *descriptors = @[[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES]];
+    fr.sortDescriptors = descriptors;
     self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fr managedObjectContext:[CoreDataStack sharedCoreDataStack].context sectionNameKeyPath:nil cacheName:nil];
+    
     self.frc.delegate = self;
 }
 
@@ -24,5 +29,13 @@
     [self performFetch];
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserCell"];
+    
+    User *user = [self.frc objectAtIndexPath:indexPath];
+    [cell configureWithUser:user];
+    
+    return cell;
+}
 
 @end
