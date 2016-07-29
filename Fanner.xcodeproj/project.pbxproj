@@ -37,6 +37,8 @@
 		0FB136E51D49ED7A00B0312B /* TimeLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FB136E31D49ED7A00B0312B /* TimeLineTableViewCell.xib */; };
 		0FB136EA1D49F78100B0312B /* Status+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB136E71D49F78100B0312B /* Status+CoreDataProperties.m */; };
 		0FB136EB1D49F78100B0312B /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB136E91D49F78100B0312B /* Status.m */; };
+		0FB1370F1D4B20E600B0312B /* CoreDataStack+Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB1370E1D4B20E600B0312B /* CoreDataStack+Status.m */; };
+		0FB137121D4B321900B0312B /* TimeLineTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB137111D4B321900B0312B /* TimeLineTVC.m */; };
 		4783E71C5BC597D33FC8F7CE /* libPods-Fanner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF31D4C7B8BA101CB8EC402C /* libPods-Fanner.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,10 @@
 		0FB136E71D49F78100B0312B /* Status+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Status+CoreDataProperties.m"; sourceTree = "<group>"; };
 		0FB136E81D49F78100B0312B /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		0FB136E91D49F78100B0312B /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		0FB1370D1D4B20E600B0312B /* CoreDataStack+Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreDataStack+Status.h"; sourceTree = "<group>"; };
+		0FB1370E1D4B20E600B0312B /* CoreDataStack+Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataStack+Status.m"; sourceTree = "<group>"; };
+		0FB137101D4B321900B0312B /* TimeLineTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineTVC.h; sourceTree = "<group>"; };
+		0FB137111D4B321900B0312B /* TimeLineTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineTVC.m; sourceTree = "<group>"; };
 		1C4DE01E8B1DD5686994375B /* Pods-Fanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fanner/Pods-Fanner.debug.xcconfig"; sourceTree = "<group>"; };
 		DCC1A1E35D864726B94CD2CD /* Pods-Fanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fanner/Pods-Fanner.release.xcconfig"; sourceTree = "<group>"; };
 		EF31D4C7B8BA101CB8EC402C /* libPods-Fanner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fanner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +205,8 @@
 				0F973D7D1D47456A00DFD3CF /* CoreDataStack.m */,
 				0F973D891D4755FE00DFD3CF /* CoreDataStack+User.h */,
 				0F973D8A1D4755FE00DFD3CF /* CoreDataStack+User.m */,
+				0FB1370D1D4B20E600B0312B /* CoreDataStack+Status.h */,
+				0FB1370E1D4B20E600B0312B /* CoreDataStack+Status.m */,
 				0F973D7F1D4748EB00DFD3CF /* Model.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -243,9 +251,11 @@
 			isa = PBXGroup;
 			children = (
 				0F973D9D1D49A10E00DFD3CF /* TimeLine.storyboard */,
+				0FB136E31D49ED7A00B0312B /* TimeLineTableViewCell.xib */,
+				0FB137101D4B321900B0312B /* TimeLineTVC.h */,
+				0FB137111D4B321900B0312B /* TimeLineTVC.m */,
 				0FB136E11D49ED7A00B0312B /* TimeLineTableViewCell.h */,
 				0FB136E21D49ED7A00B0312B /* TimeLineTableViewCell.m */,
-				0FB136E31D49ED7A00B0312B /* TimeLineTableViewCell.xib */,
 			);
 			name = TimeLine;
 			sourceTree = "<group>";
@@ -402,8 +412,10 @@
 				0F4994D31D45D66600C57601 /* ViewController.m in Sources */,
 				0F973D921D487DF600DFD3CF /* APIConstant.m in Sources */,
 				0F973D8B1D4755FE00DFD3CF /* CoreDataStack+User.m in Sources */,
+				0FB1370F1D4B20E600B0312B /* CoreDataStack+Status.m in Sources */,
 				0F973D8F1D487ACB00DFD3CF /* Service.m in Sources */,
 				0F4994D01D45D66600C57601 /* AppDelegate.m in Sources */,
+				0FB137121D4B321900B0312B /* TimeLineTVC.m in Sources */,
 				0FB136EB1D49F78100B0312B /* Status.m in Sources */,
 				0F973D771D473D1500DFD3CF /* UserTableViewCell.m in Sources */,
 				0F973D7E1D47456A00DFD3CF /* CoreDataStack.m in Sources */,

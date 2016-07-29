@@ -113,7 +113,7 @@
            accessToken:(NSString *)accessToken
            tokenSecret:(NSString *)tokenSecret
          requestMethod:(NSString *)requestMethod
-               success:(void (^)(NSDictionary *result))success
+               success:(void (^)(NSArray *result))success
                failure:(void (^)(NSError *error))failure {
     
     NSURLRequest *request = [TDOAuth URLRequestForPath:path
@@ -135,8 +135,8 @@
             failure(error);
         } else {
             
-            NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-            
+            NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            NSLog(@"result = %@", result);
             success(result);
         }
     }];
@@ -146,12 +146,12 @@
 }
 
 #pragma mark - Status
--(void)requestStatusWithSuccess:(void (^)(NSDictionary *result))success
+-(void)requestStatusWithSuccess:(void (^)(NSArray *result))success
                         failure:(void (^)(NSError *error))failure {
     
     User *user = [CoreDataStack sharedCoreDataStack].currentUser;
     
-    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite"} accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" success:success failure:failure];
+    [self requestWithPath:API_HOME_TIMELINE parameters:nil accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" success:success failure:failure];
     
     
 }

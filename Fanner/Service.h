@@ -15,10 +15,14 @@
 -(void)authoriseWithUserName:(NSString *)userName
                     password:(NSString *)passWord
                      success:(void (^)(NSString *token, NSString *tokenSecret)) success;
+
 -(void)requestVerifyCredential:(NSDictionary *)parameters
                    accessToken:(NSString *)accessToken
                    tokenSecret:(NSString *)tokenSecret
                  requestMethod:(NSString *)requestMethod
                        success:(void (^)(NSDictionary *result))success;
+
+-(void)requestStatusWithSuccess:(void (^)(NSArray *result))success
+                        failure:(void (^)(NSError *error))failure;
 
 @end

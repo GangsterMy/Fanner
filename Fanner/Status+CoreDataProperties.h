@@ -2,7 +2,7 @@
 //  Status+CoreDataProperties.h
 //  Fanner
 //
-//  Created by 赵麦 on 7/28/16.
+//  Created by 赵麦 on 7/29/16.
 //  Copyright © 2016 歹徒. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSDate *created_at;
 @property (nullable, nonatomic, retain) NSString *text;
 @property (nullable, nonatomic, retain) NSString *source;
+@property (nullable, nonatomic, retain) NSString *sid;
 @property (nullable, nonatomic, retain) User *user;
 
 @end
