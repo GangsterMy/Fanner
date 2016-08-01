@@ -8,7 +8,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "CoreDataTVC.h"
+#import "Photo.h"
+#import "JTSImageViewController.h"
 
-@interface TimeLineTVC : CoreDataTVC
+//@class JTSImageViewController;
+@interface TimeLineTVC : CoreDataTVC <JTSImageViewControllerInteractionsDelegate>
 
 @end

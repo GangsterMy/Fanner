@@ -9,8 +9,10 @@
 #import "CoreDataStack+Status.h"
 #import "Status.h"
 #import "CoreDataStack+User.h"
+#import "Photo.h"
 
 static NSString *const STATUS_ENTITY = @"Status";
+static NSString *const PHOTO_ENTITY = @"Photo";
 
 @implementation CoreDataStack (Status)
 
@@ -32,10 +34,27 @@ static NSString *const STATUS_ENTITY = @"Status";
     
     Status *status = [self checkExistdWithStatusID:statusProfile[@"id"]];
     
+    Photo *photo = status.photo;
     if (!status) {
         status = [NSEntityDescription insertNewObjectForEntityForName:STATUS_ENTITY inManagedObjectContext:self.context];
         
+        if (!photo) {
+            //insert user pthoto
+            photo = [NSEntityDescription insertNewObjectForEntityForName:PHOTO_ENTITY inManagedObjectContext:self.context];
+
+        }
+        
     }
+    
+    //update user photo
+    NSDictionary *photoDic = statusProfile[@"photo"];
+    photo.imageurl = photoDic[@"imageurl"];
+    photo.thumburl = photoDic[@"thumburl"];
+    photo.thumburl = photoDic[@"thumburl"];
+    
+    //build/update relationship
+    status.photo = photo;
+    
     
     NSString *dateStr = statusProfile[@"created_at"];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

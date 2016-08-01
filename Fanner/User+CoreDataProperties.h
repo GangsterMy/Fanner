@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.h
 //  Fanner
 //
-//  Created by 赵麦 on 7/28/16.
+//  Created by 赵麦 on 8/1/16.
 //  Copyright © 2016 歹徒. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -10,6 +10,7 @@
 //
 
 #import "User.h"
+#import "Status.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,16 +22,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *token;
 @property (nullable, nonatomic, retain) NSString *tokenSecret;
 @property (nullable, nonatomic, retain) NSString *uid;
-@property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *statuses;
+@property (nullable, nonatomic, retain) NSSet<Status *> *statuses;
 
 @end
 
 @interface User (CoreDataGeneratedAccessors)
 
-- (void)addStatusesObject:(NSManagedObject *)value;
-- (void)removeStatusesObject:(NSManagedObject *)value;
-- (void)addStatuses:(NSSet<NSManagedObject *> *)values;
-- (void)removeStatuses:(NSSet<NSManagedObject *> *)values;
+- (void)addStatusesObject:(Status *)value;
+- (void)removeStatusesObject:(Status *)value;
+- (void)addStatuses:(NSSet<Status *> *)values;
+- (void)removeStatuses:(NSSet<Status *> *)values;
 
 @end
 

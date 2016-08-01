@@ -25,10 +25,22 @@
     
     NSURL *url = [NSURL URLWithString:status.user.iconURL];
     [self.iconImage sd_setImageWithURL:url
-                      placeholderImage:nil
+                      placeholderImage:[UIImage imageNamed:@"BackgroundAvatar"]
                                options:SDWebImageRefreshCached];
+    
+    NSURL *photoUrl = [NSURL URLWithString:status.photo.imageurl];
+    if (status.photo.imageurl) {
+        [self.photoImageView sd_setImageWithURL:photoUrl placeholderImage:[UIImage imageNamed:@"BackgroundImage"] options:SDWebImageProgressiveDownload];
+    } else {
+        [self.photoImageView sd_setImageWithURL:photoUrl placeholderImage:nil options:SDWebImageProgressiveDownload];;
+    }
+    
 }
 
+//IBAction is a method that needs add to .m
+- (IBAction)showLargePhoto:(UIButton *)sender {
+    _didSelectPhotoBlock(self);
+}
 
 
 - (void)awakeFromNib {
