@@ -39,6 +39,10 @@
 		0FB136EB1D49F78100B0312B /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB136E91D49F78100B0312B /* Status.m */; };
 		0FB1370F1D4B20E600B0312B /* CoreDataStack+Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB1370E1D4B20E600B0312B /* CoreDataStack+Status.m */; };
 		0FB137121D4B321900B0312B /* TimeLineTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB137111D4B321900B0312B /* TimeLineTVC.m */; };
+		0FFC716C1D508E1900F0DF8E /* CellToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC716B1D508E1900F0DF8E /* CellToolBarView.m */; };
+		0FFC716E1D508E4000F0DF8E /* CellToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC716D1D508E4000F0DF8E /* CellToolBarView.xib */; };
+		0FFC71711D51BC3400F0DF8E /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC71701D51BC3400F0DF8E /* Compose.storyboard */; };
+		0FFC71741D51BC5500F0DF8E /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC71731D51BC5500F0DF8E /* ComposeViewController.m */; };
 		0FFD2B791D4F19C2000BCFFE /* Photo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD2B761D4F19C2000BCFFE /* Photo+CoreDataProperties.m */; };
 		0FFD2B7A1D4F19C2000BCFFE /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD2B781D4F19C2000BCFFE /* Photo.m */; };
 		0FFD2B7C1D4F1A86000BCFFE /* MappingModel.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD2B7B1D4F1A86000BCFFE /* MappingModel.xcmappingmodel */; };
@@ -98,6 +102,12 @@
 		0FB1370E1D4B20E600B0312B /* CoreDataStack+Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CoreDataStack+Status.m"; sourceTree = "<group>"; };
 		0FB137101D4B321900B0312B /* TimeLineTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineTVC.h; sourceTree = "<group>"; };
 		0FB137111D4B321900B0312B /* TimeLineTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineTVC.m; sourceTree = "<group>"; };
+		0FFC716A1D508E1900F0DF8E /* CellToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellToolBarView.h; sourceTree = "<group>"; };
+		0FFC716B1D508E1900F0DF8E /* CellToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellToolBarView.m; sourceTree = "<group>"; };
+		0FFC716D1D508E4000F0DF8E /* CellToolBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellToolBarView.xib; sourceTree = "<group>"; };
+		0FFC71701D51BC3400F0DF8E /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
+		0FFC71721D51BC5500F0DF8E /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		0FFC71731D51BC5500F0DF8E /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		0FFD2B741D4F172B000BCFFE /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		0FFD2B751D4F19C2000BCFFE /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
 		0FFD2B761D4F19C2000BCFFE /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -264,6 +274,8 @@
 		0FB136E01D49ED2E00B0312B /* TimeLine */ = {
 			isa = PBXGroup;
 			children = (
+				0FFC716F1D51BC1C00F0DF8E /* Compose */,
+				0FFC71691D508DF600F0DF8E /* View */,
 				0F973D9D1D49A10E00DFD3CF /* TimeLine.storyboard */,
 				0FB136E31D49ED7A00B0312B /* TimeLineTableViewCell.xib */,
 				0FB137101D4B321900B0312B /* TimeLineTVC.h */,
@@ -272,6 +284,26 @@
 				0FB136E21D49ED7A00B0312B /* TimeLineTableViewCell.m */,
 			);
 			name = TimeLine;
+			sourceTree = "<group>";
+		};
+		0FFC71691D508DF600F0DF8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC716A1D508E1900F0DF8E /* CellToolBarView.h */,
+				0FFC716B1D508E1900F0DF8E /* CellToolBarView.m */,
+				0FFC716D1D508E4000F0DF8E /* CellToolBarView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0FFC716F1D51BC1C00F0DF8E /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC71701D51BC3400F0DF8E /* Compose.storyboard */,
+				0FFC71721D51BC5500F0DF8E /* ComposeViewController.h */,
+				0FFC71731D51BC5500F0DF8E /* ComposeViewController.m */,
+			);
+			name = Compose;
 			sourceTree = "<group>";
 		};
 		1F1E86675A3CD403925C55D9 /* Pods */ = {
@@ -356,8 +388,10 @@
 				0F4994E61D45D83E00C57601 /* Accounts.storyboard in Resources */,
 				0F4994DB1D45D66600C57601 /* LaunchScreen.storyboard in Resources */,
 				0F4994F11D45E7BD00C57601 /* Splash.storyboard in Resources */,
+				0FFC71711D51BC3400F0DF8E /* Compose.storyboard in Resources */,
 				0F4994EB1D45E1F200C57601 /* Mention.storyboard in Resources */,
 				0F4994EF1D45E44200C57601 /* Me.storyboard in Resources */,
+				0FFC716E1D508E4000F0DF8E /* CellToolBarView.xib in Resources */,
 				0F4994D81D45D66600C57601 /* Assets.xcassets in Resources */,
 				0F4994ED1D45E2A900C57601 /* Message.storyboard in Resources */,
 				0F4994D61D45D66600C57601 /* Main.storyboard in Resources */,
@@ -424,6 +458,7 @@
 				0F973D861D47558400DFD3CF /* User+CoreDataProperties.m in Sources */,
 				0F973D991D48A45700DFD3CF /* CoreDataTVC.m in Sources */,
 				0FFD2B7C1D4F1A86000BCFFE /* MappingModel.xcmappingmodel in Sources */,
+				0FFC71741D51BC5500F0DF8E /* ComposeViewController.m in Sources */,
 				0F4994D31D45D66600C57601 /* ViewController.m in Sources */,
 				0FFD2B791D4F19C2000BCFFE /* Photo+CoreDataProperties.m in Sources */,
 				0F973D921D487DF600DFD3CF /* APIConstant.m in Sources */,
@@ -431,6 +466,7 @@
 				0FB1370F1D4B20E600B0312B /* CoreDataStack+Status.m in Sources */,
 				0F973D8F1D487ACB00DFD3CF /* Service.m in Sources */,
 				0FFD2B7A1D4F19C2000BCFFE /* Photo.m in Sources */,
+				0FFC716C1D508E1900F0DF8E /* CellToolBarView.m in Sources */,
 				0F4994D01D45D66600C57601 /* AppDelegate.m in Sources */,
 				0FB137121D4B321900B0312B /* TimeLineTVC.m in Sources */,
 				0FB136EB1D49F78100B0312B /* Status.m in Sources */,

@@ -18,11 +18,25 @@
                             <outlet property="delegate" destination="bv7-wk-HDt" id="0Mf-yi-5tw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="时间线" id="CeV-s6-m1Z"/>
+                    <navigationItem key="navigationItem" title="时间线" id="CeV-s6-m1Z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Na6-fu-eki">
+                            <connections>
+                                <segue destination="KV8-FZ-sTH" kind="presentation" id="dSX-Ne-azt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HhK-1Z-G5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1119" y="307"/>
+        </scene>
+        <!--Compose-->
+        <scene sceneID="7Ru-Mx-Kbz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Compose" id="KV8-FZ-sTH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j0V-g6-MuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1581.5" y="53"/>
         </scene>
         <!--时间线-->
         <scene sceneID="bLE-UJ-LLP">

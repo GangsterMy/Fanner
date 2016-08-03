@@ -25,4 +25,11 @@
 -(void)requestStatusWithSuccess:(void (^)(NSArray *result))success
                         failure:(void (^)(NSError *error))failure;
 
+-(void)sendStatus:(NSString *)status
+        imageData:(NSData *)imageData
+  replyToStatusID:(NSString *)replyToStatusID
+   repostStatusID:(NSString *)repostStatusID
+          success:(void (^)(NSArray *result))success
+          failure:(void (^)(NSError *error))failure;
+
 @end

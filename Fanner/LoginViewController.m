@@ -18,13 +18,13 @@
     
     // login success
     
-    [[Service sharedInstance] authoriseWithUserName:@"impzone@163.com"
+    [[Service sharedInstance] authoriseWithUserName:@"418773774@qq.com"
                                            password:@"Gangster2918"
                                             success:^(NSString *token, NSString *tokenSecret) {
-        [[Service sharedInstance] requestVerifyCredential:nil accessToken:token tokenSecret:tokenSecret requestMethod:@"GET" success:^(NSDictionary *result) {
-            [self performSegueWithIdentifier:@"ShowAccountsSegue" sender:nil];
-        }];
-    }];
+                                                [[Service sharedInstance] requestVerifyCredential:nil accessToken:token tokenSecret:tokenSecret requestMethod:@"GET" success:^(NSDictionary *result) {
+                                                    [self performSegueWithIdentifier:@"ShowAccountsSegue" sender:nil];
+                                                }];
+                                            }];
     // login fail
     
     

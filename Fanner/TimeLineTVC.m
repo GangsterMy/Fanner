@@ -22,13 +22,19 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    [self createRefreshControl];
     //.xib cell registe
     UINib *nib = [UINib nibWithNibName:@"TimeLineTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"TLCell"];
     
     //auto content size
     self.tableView.estimatedRowHeight = 100;
+    [self requestData];
+     
     
+}
+
+-(void)requestData {
     [[Service sharedInstance]requestStatusWithSuccess:^(NSArray *result) {
         [[CoreDataStack sharedCoreDataStack] insertStatusWithArrayProfile:result];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -39,8 +45,7 @@
     } failure:^(NSError *error) {
         
     }];
-     
-    
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -53,7 +58,7 @@
 -(void)configureFetch {
     
     NSFetchRequest *fr = [[NSFetchRequest alloc] initWithEntityName:@"Status"];
-    NSArray *descriptors = @[[[NSSortDescriptor alloc] initWithKey:@"created_at" ascending:YES]];
+    NSArray *descriptors = @[[[NSSortDescriptor alloc] initWithKey:@"created_at" ascending:NO]];
     fr.sortDescriptors = descriptors;
     self.frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fr managedObjectContext:[CoreDataStack sharedCoreDataStack].context sectionNameKeyPath:nil cacheName:nil];
     
@@ -114,6 +119,16 @@
     return cell;
 }
 
+//add refresh
+-(void)createRefreshControl {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+}
 
+-(void)refreshData {
+    [self requestData];
+    [self.refreshControl endRefreshing];
+}
 
 @end

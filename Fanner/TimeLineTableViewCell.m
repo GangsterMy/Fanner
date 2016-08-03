@@ -10,6 +10,7 @@
 #import "User.h"
 #import <UIImageView+WebCache.h>
 #import "Status+CoreDataProperties.h"
+#import <DTCoreText/DTCoreText.h>
 
 @implementation TimeLineTableViewCell
 
@@ -21,8 +22,16 @@
     formatter.timeStyle = NSFormattingUnitStyleShort;
     
     self.publishLabel.text = [formatter stringFromDate:status.created_at ];
-    self.contentLabel.text = status.text;
+//    self.contentLabel.text = status.text;
+    NSDictionary *options = @{DTDefaultFontName:@"HelveticaNeue-Light",
+                              DTDefaultFontSize:@16,
+                              DTDefaultLinkColor:[UIColor yellowColor]};
+    NSAttributedString *attribStr = [[NSAttributedString alloc] initWithHTMLData:[status.text dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil];
+    self.contentLabel.attributedString = attribStr;
+    self.contentLabel.numberOfLines = 0;
     
+                                          
+                                          
     NSURL *url = [NSURL URLWithString:status.user.iconURL];
     [self.iconImage sd_setImageWithURL:url
                       placeholderImage:[UIImage imageNamed:@"BackgroundAvatar"]
@@ -30,9 +39,11 @@
     
     NSURL *photoUrl = [NSURL URLWithString:status.photo.imageurl];
     if (status.photo.imageurl) {
+        _imageHeight.constant = 200;
         [self.photoImageView sd_setImageWithURL:photoUrl placeholderImage:[UIImage imageNamed:@"BackgroundImage"] options:SDWebImageProgressiveDownload];
     } else {
-        [self.photoImageView sd_setImageWithURL:photoUrl placeholderImage:nil options:SDWebImageProgressiveDownload];;
+//        [self.photoImageView sd_setImageWithURL:photoUrl placeholderImage:nil options:SDWebImageProgressiveDownload];
+        _imageHeight.constant = 0;
     }
     
 }
@@ -41,7 +52,6 @@
 - (IBAction)showLargePhoto:(UIButton *)sender {
     _didSelectPhotoBlock(self);
 }
-
 
 - (void)awakeFromNib {
     [super awakeFromNib];
