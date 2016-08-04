@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class TimeLineTableViewCell;
 @class DTAttributedLabel;
+@class CellToolBarView;
 typedef void (^DidSelectPhotoBlock) (TimeLineTableViewCell *cell);
 
 @class Status;
@@ -20,5 +21,7 @@ typedef void (^DidSelectPhotoBlock) (TimeLineTableViewCell *cell);
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (nonatomic, strong) DidSelectPhotoBlock didSelectPhotoBlock;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
+@property (weak, nonatomic) IBOutlet UIView *toolbar;
+@property (nonatomic, weak) CellToolBarView *cellToolBar;
 -(void)configureWithStatus:(Status *)status;
 @end

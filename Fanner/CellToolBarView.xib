@@ -15,14 +15,23 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yu-CL-LbR">
                     <rect key="frame" x="166" y="8" width="159" height="53"/>
                     <state key="normal" title="回复"/>
+                    <connections>
+                        <action selector="reply:forEvent:" destination="iN0-l3-epB" eventType="touchUpInside" id="64j-zf-hY8"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2T5-Vr-TEo">
                     <rect key="frame" x="325" y="8" width="158" height="53"/>
                     <state key="normal" title="收藏"/>
+                    <connections>
+                        <action selector="star:forEvent:" destination="iN0-l3-epB" eventType="touchUpInside" id="dzD-gK-Qck"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sY-zq-AHA">
                     <rect key="frame" x="8" y="8" width="158" height="53"/>
                     <state key="normal" title="转发"/>
+                    <connections>
+                        <action selector="repost:forEvent:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ebn-Sq-r5F"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -41,6 +50,9 @@
                 <constraint firstItem="2yu-CL-LbR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="zhl-Rc-yBA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="starBtn" destination="2T5-Vr-TEo" id="6GK-MS-fWV"/>
+            </connections>
             <point key="canvasLocation" x="264.5" y="2.5"/>
         </view>
     </objects>

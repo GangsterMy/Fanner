@@ -10,8 +10,9 @@
 #import "CoreDataTVC.h"
 #import "Photo.h"
 #import "JTSImageViewController.h"
+#import "CellToolBarView.h"
 
 //@class JTSImageViewController;
-@interface TimeLineTVC : CoreDataTVC <JTSImageViewControllerInteractionsDelegate>
+@interface TimeLineTVC : CoreDataTVC <JTSImageViewControllerInteractionsDelegate,CellToolBarDelegate>
 
 @end

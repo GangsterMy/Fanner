@@ -32,4 +32,12 @@
           success:(void (^)(NSArray *result))success
           failure:(void (^)(NSError *error))failure;
 
+-(void)requestWithPath:(NSString *)path
+            parameters:(NSDictionary *)parameters
+         requestMethod:(NSString *)requestMethod
+               success:(void (^)(NSArray *result))success
+               failure:(void (^)(NSError *error))failure;
+
+-(void)starWithStatusID:(NSString *)statusID success:(void(^)(NSArray *result)) success failure:(void(^)(NSError *error))failure;
+
 @end

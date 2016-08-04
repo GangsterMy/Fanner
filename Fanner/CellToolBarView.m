@@ -10,12 +10,27 @@
 
 @implementation CellToolBarView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (IBAction)reply:(id)sender forEvent:(UIEvent *)event {
+    
 }
-*/
+
+- (IBAction)star:(id)sender forEvent:(UIEvent *)event {
+    [_delegate starWithCellTollBarView:self sender:sender forEvent:event];
+}
+
+- (IBAction)repost:(id)sender forEvent:(UIEvent *)event {
+
+}
+
+-(void)setupStarButtonWithBool:(Boolean)favorited {
+
+    if (favorited) {
+        [_starBtn setTitle:@"已收藏" forState:UIControlStateNormal];
+    } else {
+        [_starBtn setTitle:@"收藏" forState:UIControlStateNormal];
+    }
+    
+}
+
 
 @end

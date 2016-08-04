@@ -108,6 +108,7 @@
 		0FFC71701D51BC3400F0DF8E /* Compose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Compose.storyboard; sourceTree = "<group>"; };
 		0FFC71721D51BC5500F0DF8E /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		0FFC71731D51BC5500F0DF8E /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		0FFC717A1D532DF700F0DF8E /* Model 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 3.xcdatamodel"; sourceTree = "<group>"; };
 		0FFD2B741D4F172B000BCFFE /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		0FFD2B751D4F19C2000BCFFE /* Photo+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+CoreDataProperties.h"; sourceTree = "<group>"; };
 		0FFD2B761D4F19C2000BCFFE /* Photo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -640,10 +641,11 @@
 		0F973D7F1D4748EB00DFD3CF /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0FFC717A1D532DF700F0DF8E /* Model 3.xcdatamodel */,
 				0FFD2B741D4F172B000BCFFE /* Model 2.xcdatamodel */,
 				0F973D801D4748EB00DFD3CF /* Model.xcdatamodel */,
 			);
-			currentVersion = 0FFD2B741D4F172B000BCFFE /* Model 2.xcdatamodel */;
+			currentVersion = 0FFC717A1D532DF700F0DF8E /* Model 3.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

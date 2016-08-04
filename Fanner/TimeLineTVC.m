@@ -12,6 +12,7 @@
 #import "TimeLineTableViewCell.h"
 #import "Service.h"
 #import "SDImageCache.h"
+#import "CellToolBarView.h"
 
 @interface TimeLineTableViewCell()
 
@@ -30,7 +31,7 @@
     //auto content size
     self.tableView.estimatedRowHeight = 100;
     [self requestData];
-     
+    
     
 }
 
@@ -45,7 +46,7 @@
     } failure:^(NSError *error) {
         
     }];
-
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,13 +75,13 @@
     } else {
         imageInfo.imageURL = [NSURL URLWithString:photo.largeurl];
     }
-                            
+    
     
     JTSImageViewController *imageViewController = [[JTSImageViewController alloc] initWithImageInfo:imageInfo  mode:JTSImageViewControllerMode_Image backgroundStyle:JTSImageViewControllerBackgroundOption_Scaled |
-    JTSImageViewControllerBackgroundOption_Blurred];
+                                                   JTSImageViewControllerBackgroundOption_Blurred];
     
     imageViewController.interactionsDelegate = self;
-   // imageViewController.interactionsDelegate = self;
+    // imageViewController.interactionsDelegate = self;
     [imageViewController showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
 }
 
@@ -90,7 +91,7 @@
     UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"提醒" message:@"保存图片" preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *save = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-
+        
     }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -116,6 +117,9 @@
         [self showPhotoWithCell:cell photo:status.photo];
     };
     
+    [cell.cellToolBar setupStarButtonWithBool:status.favorited.boolValue];
+    cell.cellToolBar.delegate = self;
+    
     return cell;
 }
 
@@ -130,5 +134,32 @@
     [self requestData];
     [self.refreshControl endRefreshing];
 }
+
+#pragma mark - CellToolBarDelegate
+-(void)starWithCellTollBarView:(CellToolBarView *)toolBar sender:(id)sender forEvent:(UIEvent *)event {
+    //取到收藏所在的indexPath, 即所在cell
+    //取到所有touches
+    NSSet *touches = [event allTouches];
+    //取到某一个touch
+    UITouch *touch = [touches anyObject];
+    //取到这个touch的location
+    CGPoint point = [touch locationInView:self.tableView];
+    //最后获取这个位置所在的indexPath
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    //用frc取到cell下的status对象
+    Status *status = [self.frc objectAtIndexPath:indexPath];
+    //请求收藏接口
+    [[Service sharedInstance] starWithStatusID:status.sid success:^(NSArray *result) {
+        NSLog(@"%@",result);
+        [[CoreDataStack sharedCoreDataStack] insertOrUpdateWithStatusProfile:result];
+        [toolBar setupStarButtonWithBool:status.favorited.boolValue];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error.description);
+    }];
+};
+-(void)unstarWithCellTollBarView:(CellToolBarView *)toolBar sender:(id)sender forEvent:(UIEvent *)event{
+    
+};
 
 @end

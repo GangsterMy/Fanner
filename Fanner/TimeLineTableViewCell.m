@@ -11,6 +11,7 @@
 #import <UIImageView+WebCache.h>
 #import "Status+CoreDataProperties.h"
 #import <DTCoreText/DTCoreText.h>
+#import "CellToolBarView.h"
 
 @implementation TimeLineTableViewCell
 
@@ -44,8 +45,34 @@
     } else {
 //        [self.photoImageView sd_setImageWithURL:photoUrl placeholderImage:nil options:SDWebImageProgressiveDownload];
         _imageHeight.constant = 0;
+        
+        
     }
     
+    _cellToolBar = [self creatCellToolBar];
+    //代码布局
+    //1.automask = no
+    //2.层次关系 subview
+    _cellToolBar.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.toolbar addSubview:_cellToolBar];
+    
+    NSLayoutConstraint *top = [_cellToolBar.topAnchor constraintEqualToAnchor:self.toolbar.topAnchor];
+    NSLayoutConstraint *buttom = [_cellToolBar.bottomAnchor constraintEqualToAnchor:self.toolbar.bottomAnchor];
+    NSLayoutConstraint *left = [_cellToolBar.leftAnchor constraintEqualToAnchor:self.toolbar.leftAnchor];
+    NSLayoutConstraint *right = [_cellToolBar.rightAnchor constraintEqualToAnchor:self.toolbar.rightAnchor];
+    
+    top.active = YES;
+    buttom.active = YES;
+    left.active = YES;
+    right.active = YES;
+    
+    
+}
+
+-(CellToolBarView *)creatCellToolBar {
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"CellToolBarView" owner:nil options:nil];
+    CellToolBarView *cellToolBar = views[0];
+    return cellToolBar;
 }
 
 //IBAction is a method that needs add to .m

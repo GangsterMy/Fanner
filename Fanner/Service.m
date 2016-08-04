@@ -17,7 +17,7 @@
 @end
 
 @implementation Service
-
+//单例
 +(instancetype)sharedInstance {
     static Service *service;
     static dispatch_once_t onceToken;
@@ -28,6 +28,7 @@
     return service;
 }
 
+//Xauth授权
 -(instancetype)init {
     self = [super init];
     if (self) {
@@ -74,7 +75,7 @@
     [task resume];
     
 }
-
+//获取用户信息
 -(void)requestVerifyCredential:(NSDictionary *)parameters
                    accessToken:(NSString *)accessToken
                    tokenSecret:(NSString *)tokenSecret
@@ -108,6 +109,7 @@
 }
 
 #pragma mark - Base Request
+//授权时使用
 -(void)requestWithPath:(NSString *)path
             parameters:(NSDictionary *)parameters
            accessToken:(NSString *)accessToken
@@ -145,20 +147,58 @@
     
 }
 
-#pragma mark - Status
--(void)requestStatusWithSuccess:(void (^)(NSArray *result))success
-                        failure:(void (^)(NSError *error))failure {
+//重构Baserequest方法 把两个token参数简化了
+-(void)requestWithPath:(NSString *)path
+            parameters:(NSDictionary *)parameters
+         requestMethod:(NSString *)requestMethod
+               success:(void (^)(NSArray *result))success
+               failure:(void (^)(NSError *error))failure {
     
     User *user = [CoreDataStack sharedCoreDataStack].currentUser;
     
-    [self requestWithPath:API_HOME_TIMELINE parameters:nil accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" success:success failure:failure];
+    NSURLRequest *request = [TDOAuth URLRequestForPath:path
+                                            parameters:parameters
+                                                  host:FANFOU_API_HOST
+                                           consumerKey:CONSUMER_KEY
+                                        consumerSecret:CONSUMER_SECRET
+                                           accessToken:user.token
+                                           tokenSecret:user.tokenSecret
+                                                scheme:@"http"
+                                         requestMethod:requestMethod
+                                          dataEncoding:TDOAuthContentTypeUrlEncodedForm
+                                          headerValues:nil
+                                       signatureMethod:TDOAuthSignatureMethodHmacSha1];
     
-    [self requestWithPath:API_HOME_TIMELINE parameters:@{@"mode":@"lite",@"count":@60,@"format":@"html"} accessToken:user.token tokenSecret:user.tokenSecret requestMethod:@"GET" success:success failure:failure];
+    NSURLSessionDataTask *task = [_session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            failure(error);
+        } else {
+            
+            NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            NSLog(@"result = %@", result);
+            success(result);
+        }
+    }];
+    
+    [task resume];
     
 }
 
-#pragma mark - POST DATA
 
+#pragma mark - Status
+//API_HOME_TIMELINE
+-(void)requestStatusWithSuccess:(void (^)(NSArray *result))success
+                        failure:(void (^)(NSError *error))failure {
+    
+    [self requestWithPath:API_HOME_TIMELINE
+               parameters:@{@"mode":@"lite",@"count":@60,@"format":@"html"}
+            requestMethod:@"GET"
+                  success:success failure:failure];
+}
+
+#pragma mark - POST DATA
+//post include text and photo
 -(void)sendStatus:(NSString *)status
         imageData:(NSData *)imageData
   replyToStatusID:(NSString *)replyToStatusID
@@ -172,7 +212,7 @@
     
     if (replyToStatusID) {
         parameters[@"in_reply_to_status_id"] = replyToStatusID;
-
+        
     }
     if (repostStatusID) {
         parameters[@"repost_status_id"] = repostStatusID;
@@ -184,19 +224,25 @@
         
     } else {
         //post status
-        User *user = [CoreDataStack sharedCoreDataStack].currentUser;
-        [self requestWithPath:API_UPDATE_TEXT parameters:parameters
-                  accessToken:user.token
-                  tokenSecret:user.tokenSecret
+        //        User *user = [CoreDataStack sharedCoreDataStack].currentUser;
+        //        [self requestWithPath:API_UPDATE_TEXT parameters:parameters
+        //                  accessToken:user.token
+        //                  tokenSecret:user.tokenSecret
+        //                requestMethod:@"POST"
+        //                      success:success
+        //                      failure:failure];
+        [self requestWithPath:API_UPDATE_TEXT
+                   parameters:parameters
                 requestMethod:@"POST"
                       success:success
                       failure:failure];
-
+        
     }
     
 }
 
 #pragma mark - PhotoUpload
+//用图片上传的表单格式的构造
 - (NSData *)createBodyWithBoundary:(NSString *)boundary parameters:(NSDictionary *)parameters data:(NSData *)data fileName:(NSString *)fileName
 {
     NSMutableData *httpBody = [NSMutableData data];
@@ -226,29 +272,29 @@
 
 //post photo
 -(void)postPhotoWithPath:(NSString *)path
-             parameters:(NSDictionary *)parameters
+              parameters:(NSDictionary *)parameters
 //            accessToken:(NSString *)accessToken
 //            tokenSecret:(NSString *)tokenSecret
 //          requestMethod:(NSString *)requestMethod
-                success:(void (^)(NSArray *result))success
-                failure:(void (^)(NSError *error))failure
+                 success:(void (^)(NSArray *result))success
+                 failure:(void (^)(NSError *error))failure
 
-                   data:(NSData *)imageData {
+                    data:(NSData *)imageData {
     User *user = [CoreDataStack sharedCoreDataStack].currentUser;
     
     //parameter is nil 因为后面重新传了这个菜蔬包含的头
     NSMutableURLRequest *request = [[TDOAuth URLRequestForPath:path
-                                            parameters:nil
-                                                  host:FANFOU_API_HOST
-                                           consumerKey:CONSUMER_KEY
-                                        consumerSecret:CONSUMER_SECRET
-                                           accessToken:user.token
-                                           tokenSecret:user.tokenSecret
-                                                scheme:@"http"
+                                                    parameters:nil
+                                                          host:FANFOU_API_HOST
+                                                   consumerKey:CONSUMER_KEY
+                                                consumerSecret:CONSUMER_SECRET
+                                                   accessToken:user.token
+                                                   tokenSecret:user.tokenSecret
+                                                        scheme:@"http"
                                                  requestMethod:@"POST"
-                                          dataEncoding:TDOAuthContentTypeUrlEncodedForm
-                                          headerValues:nil
-                                       signatureMethod:TDOAuthSignatureMethodHmacSha1] mutableCopy];
+                                                  dataEncoding:TDOAuthContentTypeUrlEncodedForm
+                                                  headerValues:nil
+                                               signatureMethod:TDOAuthSignatureMethodHmacSha1] mutableCopy];
     NSString *boundary = [self generateBoundaryString];
     //与发布文本不同的http头和body
     request.HTTPBody = [self createBodyWithBoundary:boundary parameters:parameters data:imageData fileName:@"photo"];
@@ -270,6 +316,16 @@
     
     [task resume];
     
+}
+
+//收藏
+-(void)starWithStatusID:(NSString *)statusID success:(void(^)(NSArray *result)) success failure:(void(^)(NSError *error))failure {
+    NSString *path = [NSString stringWithFormat:@"%@:%@.json", API_FAVORITES_CREATE,statusID];
+    [self requestWithPath:path parameters:nil requestMethod:@"POST" success:success failure:failure];
+}
+-(void)unstarWithStatusID:(NSString *)statusID success:(void(^)(NSArray *)) success failure:(void(^)(NSError *error))failure {
+    NSString *path = [NSString stringWithFormat:@"%@:%@.json", API_FAVORITES_DESTROY,statusID];
+    [self requestWithPath:path parameters:nil requestMethod:@"POST" success:success failure:failure];
 }
 
 

@@ -64,6 +64,10 @@ static NSString *const PHOTO_ENTITY = @"Photo";
     status.source = statusProfile[@"source"];
     status.text = statusProfile[@"text"];
     
+    NSString *favStr = statusProfile[@"favorited"];
+    //bool -> nsnumber
+    status.favorited = @(favStr.boolValue);
+    
     return status;
 }
 

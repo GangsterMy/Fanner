@@ -18,4 +18,6 @@ extern NSString *const API_VERIFY_CREDENTIALS;
 extern NSString *const API_HOME_TIMELINE;
 extern NSString *const API_UPDATE_TEXT;
 extern NSString *const API_UPLOAD_PHOTO;
+extern NSString *const API_FAVORITES_CREATE;
+extern NSString *const API_FAVORITES_DESTROY;
 
