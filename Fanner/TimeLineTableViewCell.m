@@ -30,7 +30,7 @@
     NSAttributedString *attribStr = [[NSAttributedString alloc] initWithHTMLData:[status.text dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil];
     self.contentLabel.attributedString = attribStr;
     self.contentLabel.numberOfLines = 0;
-    
+    _contentLabelHeigtConstrain.constant = [self.contentLabel intrinsicContentSize].height;
                                           
                                           
     NSURL *url = [NSURL URLWithString:status.user.iconURL];
@@ -45,8 +45,7 @@
     } else {
 //        [self.photoImageView sd_setImageWithURL:photoUrl placeholderImage:nil options:SDWebImageProgressiveDownload];
         _imageHeight.constant = 0;
-        
-        
+        _photoImageView.image = nil;
     }
     
     _cellToolBar = [self creatCellToolBar];

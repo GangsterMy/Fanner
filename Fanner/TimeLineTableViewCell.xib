@@ -93,6 +93,7 @@
             <connections>
                 <outlet property="cellToolBar" destination="wmY-XF-Gfd" id="9Gf-Ak-yqB"/>
                 <outlet property="contentLabel" destination="MvC-DB-Ivu" id="rae-8a-Uxa"/>
+                <outlet property="contentLabelHeigtConstrain" destination="quW-dF-Qb2" id="LUo-uw-9KU"/>
                 <outlet property="iconImage" destination="GQI-yg-1Fs" id="ayk-v4-n1y"/>
                 <outlet property="imageHeight" destination="0eH-Vw-qiv" id="24g-kV-X5c"/>
                 <outlet property="nameLabel" destination="ixf-lo-sPh" id="1fy-at-q2u"/>

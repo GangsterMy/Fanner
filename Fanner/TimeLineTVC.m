@@ -149,7 +149,7 @@
     //用frc取到cell下的status对象
     Status *status = [self.frc objectAtIndexPath:indexPath];
     //请求收藏接口
-    [[Service sharedInstance] starWithStatusID:status.sid success:^(NSArray *result) {
+    [[Service sharedInstance] starWithStatusID:status.sid success:^(id result) {
         NSLog(@"%@",result);
         [[CoreDataStack sharedCoreDataStack] insertOrUpdateWithStatusProfile:result];
         [toolBar setupStarButtonWithBool:status.favorited.boolValue];
@@ -157,9 +157,24 @@
     } failure:^(NSError *error) {
         NSLog(@"%@",error.description);
     }];
-};
+    
+    
+//    [[Service sharedInstance] unstarWithStatusID:status.sid success:^(NSArray *result) {
+//        NSLog(@"%@",result);
+//        [[CoreDataStack sharedCoreDataStack] insertOrUpdateWithStatusProfile:result];
+//        [toolBar setupStarButtonWithBool:status.favorited.boolValue];
+//    } failure:^(NSError *error) {
+//        NSLog(@"%@", error.description);
+//    }];
+}
+
 -(void)unstarWithCellTollBarView:(CellToolBarView *)toolBar sender:(id)sender forEvent:(UIEvent *)event{
     
 };
+
+#pragma mark - ARSegmentControllerDelegate
+-(NSString *)segmentTitle {
+    return @"时间线";
+}
 
 @end

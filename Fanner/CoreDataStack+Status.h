@@ -11,8 +11,11 @@
 
 @interface CoreDataStack (Status)
 
+- (void)insertOrUpdateStatusWithObjects:(NSArray *)objects;
+
 -(void)insertStatusWithArrayProfile:(NSArray *)arrayProfile;
 -(Status *)insertOrUpdateWithStatusProfile:(NSDictionary *)statusProfile;
+- (NSFetchRequest *)photoFetchRequest;
 
 
 @end

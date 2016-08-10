@@ -100,8 +100,8 @@
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
         
         [[CoreDataStack sharedCoreDataStack] insertOrUpdateWithUserProfile:result token:accessToken tokenSecret:tokenSecret];
-        
-        success(result);
+            success(result);
+    
     }];
     
     [task resume];
@@ -139,7 +139,10 @@
             
             NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             NSLog(@"result = %@", result);
-            success(result);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(result);
+            });
+            
         }
     }];
     
@@ -177,7 +180,10 @@
             
             NSArray *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
             NSLog(@"result = %@", result);
-            success(result);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success(result);
+            });
+
         }
     }];
     
@@ -319,11 +325,11 @@
 }
 
 //收藏
--(void)starWithStatusID:(NSString *)statusID success:(void(^)(NSArray *result)) success failure:(void(^)(NSError *error))failure {
+-(void)starWithStatusID:(NSString *)statusID success:(void(^)(id result)) success failure:(void(^)(NSError *error))failure {
     NSString *path = [NSString stringWithFormat:@"%@:%@.json", API_FAVORITES_CREATE,statusID];
     [self requestWithPath:path parameters:nil requestMethod:@"POST" success:success failure:failure];
 }
--(void)unstarWithStatusID:(NSString *)statusID success:(void(^)(NSArray *)) success failure:(void(^)(NSError *error))failure {
+-(void)unstarWithStatusID:(NSString *)statusID success:(void(^)(id result)) success failure:(void(^)(NSError *error))failure {
     NSString *path = [NSString stringWithFormat:@"%@:%@.json", API_FAVORITES_DESTROY,statusID];
     [self requestWithPath:path parameters:nil requestMethod:@"POST" success:success failure:failure];
 }

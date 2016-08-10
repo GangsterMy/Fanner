@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="495" height="274"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Kq-hQ-cBo">
+                    <rect key="frame" x="8" y="72" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Vu8-Mm-pIC"/>
+                        <constraint firstAttribute="height" constant="100" id="q61-vJ-sLg"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrC-9q-b7i">
+                    <rect key="frame" x="8" y="172" width="43" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WP6-43-Ywe">
+                    <rect key="frame" x="8" y="193" width="14" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-Lv-1XD">
+                    <rect key="frame" x="130" y="214" width="62" height="30"/>
+                    <state key="normal" title="followers"/>
+                    <connections>
+                        <action selector="followersBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mxg-Ei-9ae"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyM-k7-uyT">
+                    <rect key="frame" x="252" y="214" width="43" height="30"/>
+                    <state key="normal" title="status"/>
+                    <connections>
+                        <action selector="statusBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="4QC-1J-inF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-9p-c7G">
+                    <rect key="frame" x="415" y="72" width="47" height="30"/>
+                    <state key="normal" title="modify"/>
+                    <connections>
+                        <action selector="modifyBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mxr-U5-Eiz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlq-C1-b7G">
+                    <rect key="frame" x="8" y="214" width="62" height="30"/>
+                    <state key="normal" title="following"/>
+                    <connections>
+                        <action selector="followingBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="24g-id-pai"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jlq-C1-b7G" firstAttribute="top" secondItem="WP6-43-Ywe" secondAttribute="bottom" id="6PB-Ug-vNv"/>
+                <constraint firstItem="3Kq-hQ-cBo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="64" id="7hD-aw-woU"/>
+                <constraint firstItem="WP6-43-Ywe" firstAttribute="leading" secondItem="3Kq-hQ-cBo" secondAttribute="leading" id="AOH-nQ-pPY"/>
+                <constraint firstItem="Jlq-C1-b7G" firstAttribute="leading" secondItem="3Kq-hQ-cBo" secondAttribute="leading" id="AQw-DM-kdC"/>
+                <constraint firstItem="GyM-k7-uyT" firstAttribute="top" secondItem="Jlq-C1-b7G" secondAttribute="top" id="CJS-aj-5RF"/>
+                <constraint firstItem="WP6-43-Ywe" firstAttribute="top" secondItem="nrC-9q-b7i" secondAttribute="bottom" id="GWt-8h-ewA"/>
+                <constraint firstItem="GRO-Lv-1XD" firstAttribute="leading" secondItem="Jlq-C1-b7G" secondAttribute="trailing" constant="60" id="QmB-vo-b7N"/>
+                <constraint firstAttribute="trailingMargin" secondItem="v4H-9p-c7G" secondAttribute="trailing" constant="25" id="eIp-wH-HKa"/>
+                <constraint firstItem="GyM-k7-uyT" firstAttribute="leading" secondItem="GRO-Lv-1XD" secondAttribute="trailing" constant="60" id="iaG-Eb-PRW"/>
+                <constraint firstItem="nrC-9q-b7i" firstAttribute="top" secondItem="3Kq-hQ-cBo" secondAttribute="bottom" id="q9Z-ko-Vr0"/>
+                <constraint firstItem="GRO-Lv-1XD" firstAttribute="top" secondItem="Jlq-C1-b7G" secondAttribute="top" id="qDa-UX-OrT"/>
+                <constraint firstItem="v4H-9p-c7G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="64" id="tyQ-kh-aGW"/>
+                <constraint firstItem="3Kq-hQ-cBo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="uXv-cX-aew"/>
+                <constraint firstItem="nrC-9q-b7i" firstAttribute="leading" secondItem="3Kq-hQ-cBo" secondAttribute="leading" id="vaT-7l-lr5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="followerBtn" destination="GRO-Lv-1XD" id="EXJ-qK-HVo"/>
+                <outlet property="followingBtn" destination="Jlq-C1-b7G" id="pq5-wQ-49w"/>
+                <outlet property="iconImageView" destination="3Kq-hQ-cBo" id="Pcp-gz-GTt"/>
+                <outlet property="idLbl" destination="WP6-43-Ywe" id="JXo-5D-a6Z"/>
+                <outlet property="modifyBtn" destination="v4H-9p-c7G" id="i6a-MR-d66"/>
+                <outlet property="nameLbl" destination="nrC-9q-b7i" id="U5A-J4-YnL"/>
+                <outlet property="statusBtn" destination="GyM-k7-uyT" id="N9S-Hl-yjB"/>
+            </connections>
+            <point key="canvasLocation" x="424.5" y="144"/>
+        </view>
+    </objects>
+</document>

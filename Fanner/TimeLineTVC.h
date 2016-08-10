@@ -11,8 +11,9 @@
 #import "Photo.h"
 #import "JTSImageViewController.h"
 #import "CellToolBarView.h"
+#import <ARSegmentPager/ARSegmentPageController.h>
 
 //@class JTSImageViewController;
-@interface TimeLineTVC : CoreDataTVC <JTSImageViewControllerInteractionsDelegate,CellToolBarDelegate>
+@interface TimeLineTVC : CoreDataTVC <JTSImageViewControllerInteractionsDelegate,CellToolBarDelegate,ARSegmentControllerDelegate>
 
 @end

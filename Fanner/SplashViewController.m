@@ -7,6 +7,7 @@
 //
 
 #import "SplashViewController.h"
+#import "CoreDataStack+User.h"
 
 @interface SplashViewController ()
 
@@ -19,9 +20,11 @@
     // Do any additional setup after loading the view.
     
     dispatch_async(dispatch_get_main_queue(), ^ {
+        User *user = [CoreDataStack sharedCoreDataStack].currentUser;
+        NSLog(@"%@", user);
         
-        BOOL isUserExist = NO;
-        if (isUserExist) {
+//        BOOL isUserExist = NO;
+        if (user) {
             [self performSegueWithIdentifier:@"MainSegue" sender:nil];
         } else {
             [self performSegueWithIdentifier:@"LoginSegue" sender:nil];

@@ -38,6 +38,7 @@
                success:(void (^)(NSArray *result))success
                failure:(void (^)(NSError *error))failure;
 
--(void)starWithStatusID:(NSString *)statusID success:(void(^)(NSArray *result)) success failure:(void(^)(NSError *error))failure;
+-(void)starWithStatusID:(NSString *)statusID success:(void(^)(id result)) success failure:(void(^)(NSError *error))failure;
+-(void)unstarWithStatusID:(NSString *)statusID success:(void(^)(id result)) success failure:(void(^)(NSError *error))failure;
 
 @end
